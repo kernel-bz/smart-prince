@@ -1,0 +1,30 @@
+classifier train ../../data/actions/actions.data ../../data/actions/actions.cfg ../../data/actions/backup/actions.backup
+
+train_classifier()
+    load_thread = load_data(args);
+            load_thread()
+
+//ml/src/data.c
+load_thread();
+    CLASSIFICATION_DATA
+    load_data_augment();
+        load_image_augment_paths();
+        load_labels_paths();
+            fill_truth();
+
+net->input:
+X = d.X.vals[index] //size=d.X.cols*sizeof(float)
+net->truth:
+y = d.y.vals[index] //size=d.y.cols*sizeof(float)
+
+float train_network_datum(network *net)
+{
+    *net->seen += net->batch;
+    net->train = 1;
+    forward_network(net);
+    backward_network(net);
+    float error = *net->cost;
+    if(((*net->seen)/net->batch)%net->subdivisions == 0)
+        update_network(net);
+    return error;
+}

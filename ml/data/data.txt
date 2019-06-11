@@ -1,0 +1,1 @@
+The model will save periodic backups to the directory specified in src/rnn.c in the function train_char_rnn, you probably want to change this directory to a good location for your machine. To restart training from a backup you can run:

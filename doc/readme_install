@@ -1,0 +1,43 @@
+
+//for sp_motion project setting
+//------------------------------------------------------------------------------
+
+//install package
+sudo apt-get install libjpeg-dev libv4l-dev
+cd /usr/include/linux/
+ln -s ../libv4l1-videodev.h videodev.h
+
+_FCNTL_H
+
+sudo apt-get install libc6-dev linux-libc-dev linux-headers-$(uname -r)
+
+#include <linux/fcntl.h>
+///#include <fcntl.h>
+
+//Build Options
+//#define
+_REENTRANT
+MOTION_V4L2
+MOTION_V4L2_OLD
+HAVE_BSWAP
+TYPE_32BIT="int"
+sysconfdir=\"/usr/local/etc\"
+
+//Linker Options
+pthread
+jpeg
+avformat
+avcodec
+avutil
+m
+z
+
+sudo apt-get install  avcodec ffmpeg
+sudo sudo apt-get install -y \
+    libavformat-dev libavcodec-dev libavdevice-dev \
+    libavutil-dev libswscale-dev libavresample-dev
+
+//etc/motion/motion.conf
+
+
+
