@@ -1,8 +1,0 @@
-classes=1000
-train  = data/imagenet/imagenet1k.train.list
-valid  = data/imagenet/imagenet1k.valid.list
-backup = data/imagenet/backup/
-labels = data/imagenet/imagenet.labels.list
-names  = data/imagenet/imagenet.shortnames.list
-top=5
-
